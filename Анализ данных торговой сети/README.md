@@ -13,6 +13,6 @@
 4. Эффективность проведённой маркетинговой акции.
 
 Отчеты: 
-1. Анализ аномалий длительности транзакций 
+1. [Анализ аномалий длительности транзакций](<https://github.com/kathy-f258/Data_Analyst_Portfolio/blob/main/Анализ ТТ_1.09_Фоломеева.xlsx>) 
 2. Анализ работы касс самообслуживания, анализ маркетинговой акции
 3. [Дашборд для автоматизации операционной отчётности](<https://docs.google.com/spreadsheets/d/1nHwVd2sumrJV0K1qxpIK9bFstMoLeZCwBZmTwuHlltY/edit?usp=drive_link>)

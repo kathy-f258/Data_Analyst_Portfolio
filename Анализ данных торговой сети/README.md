@@ -15,4 +15,4 @@
 Отчеты: 
 1. Анализ аномалий длительности транзакций 
 2. Анализ работы касс самообслуживания, анализ маркетинговой акции
-[3. Дашборд для автоматизации операционной отчётности](<https://docs.google.com/spreadsheets/d/1nHwVd2sumrJV0K1qxpIK9bFstMoLeZCwBZmTwuHlltY/edit?usp=drive_link>)
+3. [Дашборд для автоматизации операционной отчётности](<https://docs.google.com/spreadsheets/d/1nHwVd2sumrJV0K1qxpIK9bFstMoLeZCwBZmTwuHlltY/edit?usp=drive_link>)

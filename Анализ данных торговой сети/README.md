@@ -12,4 +12,7 @@
 3. Функционирование касс самообслуживания.
 4. Эффективность проведённой маркетинговой акции.
 
-Также спроектировала дашборд, позволивший автоматизировать формирование операционной отчётности <https://docs.google.com/spreadsheets/d/1nHwVd2sumrJV0K1qxpIK9bFstMoLeZCwBZmTwuHlltY/edit?usp=drive_link>
+Отчеты: 
+1. Анализ аномалий длительности транзакций 
+2. Анализ работы касс самообслуживания, анализ маркетинговой акции
+[3. Дашборд для автоматизации операционной отчётности](<https://docs.google.com/spreadsheets/d/1nHwVd2sumrJV0K1qxpIK9bFstMoLeZCwBZmTwuHlltY/edit?usp=drive_link>)

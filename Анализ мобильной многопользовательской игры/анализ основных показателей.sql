@@ -41,27 +41,6 @@ select    count(*) as all_sessions
         , count(end_session) as cnt_end
 from skygame.game_sessions
 
-
--- Суммарное количество игровых сессий дольше 5 минут.
-
-select      count(*) as cnt_all 
-        ,   sum(case when end_session - start_session > interval '5 minute' then 1 else 0 end) as cnt_5min
-from skygame.game_sessions
-
--- Распределение по месяцам:
-select      date_trunc('month',start_session) as mm
-        ,   count(*)
-from skygame.game_sessions
-group by mm 
-order by mm
-
--- Распределение количества игровых сессий, суммарного количества сессий дольше 5 минут, доли сессий дольше 5 минут среди всех сессий.
-select      count(*) as cnt_all 
-        ,   sum(case when end_session - start_session > interval '5 minute' then 1 else 0 end) as cnt_5min
-        ,   sum(case when end_session - start_session > interval '5 minute' then 1.0 else 0.0 end) / count(*) as per
-from skygame.game_sessions
-
--- В дальнейшем анализе убираю все сессии меньше 5 минут.
 -- Динамика средней длительности одной игровой сессии по месяцам.
 select          date_trunc('month', start_session) as mm
             ,   avg(end_session - start_session) as avg_session
@@ -77,5 +56,24 @@ from skygame.game_sessions
 where end_session - start_session > interval'5 minute'
 group by mm
 order by mm
+
+--DAU (Daily Active Users)
+select      date_trunc ('day',start_session) as day
+            ,count (distinct id_user) as active_day
+from        skygame.game_sessions
+group by    day
+
+--WAU (Weekly Active Users)
+select      date_trunc ('week',start_session) as week
+            ,count (distinct id_user) as active_week
+from        skygame.game_sessions
+group by    week
+
+--MAU (Monthly Active Users)
+select      date_trunc ('month',start_session) as month
+            ,count (distinct id_user) as active_month
+from        skygame.game_sessions
+group by    month 
+
 
 

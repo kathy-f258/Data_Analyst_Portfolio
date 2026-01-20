@@ -75,5 +75,26 @@ select      date_trunc ('month',start_session) as month
 from        skygame.game_sessions
 group by    month 
 
+-- K-factor
+select (count(ref_reg)/count(distinct t1.id_user)::float) * (sum(ref_reg)/count(ref_reg)) as kf 
+                    from skygame.users t1
+                    full join skygame.referral t2
+                            on t1.id_user=t2.id_user
 
+-- Cколько пользователей нам принесет одна будущая среднестатистическая когорта
+with k_faktor   as  (
+                    select (count(ref_reg)/count(distinct t1.id_user)::float) * (sum(ref_reg)/count(ref_reg)) as kf 
+                    from skygame.users t1
+                    full join skygame.referral t2
+                            on t1.id_user=t2.id_user
+                    ),
+cogort          as  (
+                    select avg(users) as av_cog
+                    from    (select  count (id_user) as users,
+                                    date_trunc ('month', reg_date) as mm
+                            from    skygame.users 
+                            group by mm        
+                            ) as all_cog 
+                    )
 
+select (select kf from k_faktor) * (select av_cog from cogort)
